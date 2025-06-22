@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '@/components/layout/Header';
 import MainContent from '@/components/layout/MainContent';
 import Sidebar from '@/components/layout/Sidebar';
@@ -10,6 +10,17 @@ import Sidebar from '@/components/layout/Sidebar';
  * This structure is responsive, hiding the sidebar on larger breakpoints.
  */
 const IndexPage: React.FC = () => {
+  useEffect(() => {
+    // Apply the dark theme when this component mounts
+    const root = window.document.documentElement;
+    root.classList.add('dark');
+
+    // Optional: cleanup on unmount
+    return () => {
+      root.classList.remove('dark');
+    };
+  }, []);
+
   return (
     <div className="min-h-screen w-full bg-background">
       <Header />
