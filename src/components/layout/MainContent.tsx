@@ -25,12 +25,12 @@ const MainContent: React.FC = () => {
           <Button
             key={category}
             variant="outline"
-            className="rounded-full bg-white text-foreground/80 border-border hover:border-primary hover:text-primary hover:bg-red-50/50 font-normal"
+            className="rounded-full text-foreground/80 border-border hover:border-primary hover:text-primary font-normal"
             size="sm"
           >
             {category}
           </Button>
-        ))}
+        ))}\
       </div>
       
       <ActivityCardGrid />
