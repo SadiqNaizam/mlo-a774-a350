@@ -30,17 +30,17 @@ const SidebarFilters: React.FC<{ className?: string }> = ({ className }) => {
                   variant="outline"
                   size="sm"
                   className={cn(
-                    "rounded-md border-gray-300 bg-white text-gray-700 hover:bg-gray-50 hover:border-primary font-normal",
-                    activeDate === option && "border-primary text-primary bg-red-50/50"
+                    "rounded-md text-muted-foreground hover:bg-accent hover:text-accent-foreground font-normal",
+                    activeDate === option && "border-primary text-primary bg-primary/10 hover:bg-primary/20"
                   )}
                   onClick={() => setActiveDate(option)}
                 >
                   {option}
                 </Button>
-              ))}
+              ))}\
             </div>
             <div className="flex items-center space-x-2 pt-2">
-              <Checkbox id="date-range" className="border-gray-400 rounded-[2px]"/>
+              <Checkbox id="date-range" className="rounded-[2px]"/>
               <Label htmlFor="date-range" className="font-normal text-sm text-foreground">
                 Date Range
               </Label>
@@ -48,7 +48,7 @@ const SidebarFilters: React.FC<{ className?: string }> = ({ className }) => {
           </div>
         </FilterGroup>
 
-        <FilterGroup title="Categories" onClear={() => console.log('Clear Categories')}>
+        <FilterGroup title="Categories" onClear={() => console.log('Clear Categories')}>\
           <p className="text-sm text-muted-foreground py-2">Category options would be listed here.</p>
         </FilterGroup>
         
@@ -61,7 +61,7 @@ const SidebarFilters: React.FC<{ className?: string }> = ({ className }) => {
         </FilterGroup>
       </div>
 
-      <Button variant="outline" className="w-full mt-6 border-primary text-primary hover:text-primary hover:bg-red-50/50">
+      <Button variant="outline" className="w-full mt-6 border-primary text-primary hover:text-primary hover:bg-primary/10">
         Browse by Venues
       </Button>
     </div>
