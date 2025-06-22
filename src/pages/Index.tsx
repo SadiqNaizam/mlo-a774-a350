@@ -1,14 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
+import Header from '@/components/layout/Header';
+import MainContent from '@/components/layout/MainContent';
+import Sidebar from '@/components/layout/Sidebar';
 
-const Index = () => {
+/**
+ * The main page component for the "Activities Overview".
+ * It assembles the primary layout components: a sticky header, a filter sidebar,
+ * and the main content area to display the activities.
+ * This structure is responsive, hiding the sidebar on larger breakpoints.
+ */
+const IndexPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="min-h-screen w-full bg-background">
+      <Header />
+      <div className="container mx-auto flex max-w-screen-2xl flex-row items-start px-4 md:px-6">
+        {/* Sidebar is visible on large screens and handles its own spacing and stickiness */}
+        <Sidebar />
+        {/* MainContent takes the remaining space and handles its internal padding */}
+        <MainContent />
       </div>
     </div>
   );
 };
 
-export default Index;
+export default IndexPage;
